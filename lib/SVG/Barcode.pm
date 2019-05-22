@@ -34,7 +34,7 @@ sub new ($class, $params = {}) {
 sub param ($self, $name, $newvalue = undef) {
   if (defined $newvalue) {
     croak "Unknown parameter $name!" unless $self->DEFAULTS->{$name};
-    $self->{$name} = $newvalue || $self->DEFAULTS->{$name};
+    $self->{$name} = $newvalue eq '' ? $self->DEFAULTS->{$name} : $newvalue;
     delete $self->{plotter};
     return $self;
   } else {
@@ -75,6 +75,32 @@ sub _rect ($self, $x, $y, $width, $height, $color = $self->{foreground}) {
     qq|  <rect x="$x1" y="$y1" width="$width" height="$height" fill="$color"/>|;
 
   return $self;
+}
+
+sub _text ($self, $text, $x, $y, $size, $color = $self->{foreground}) {
+  my $escaped = $self->_xml_escape($text);
+  my $x1      = $x + $self->{margin};
+  my $y1      = $y + $self->{margin};
+  $self->{height} = fmax $self->{height}, $y1;
+
+  push $self->{elements}->@*,
+    qq|  <text x="$x1" y="$y1" font-size="$size" fill="$color">$escaped</text>|;
+
+  return $self;
+}
+
+# from Mojo::Util
+my %XML = (
+  '&'  => '&amp;',
+  '<'  => '&lt;',
+  '>'  => '&gt;',
+  '"'  => '&quot;',
+  '\'' => '&#39;'
+);
+
+sub _xml_escape ($self, $str) {
+  $str =~ s/([&<>"'])/$XML{$1}/ge;
+  return $str;
 }
 
 1;
