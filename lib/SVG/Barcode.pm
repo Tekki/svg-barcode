@@ -9,7 +9,7 @@ no warnings 'experimental::signatures';
 use Carp 'croak';
 use POSIX 'fmax';
 
-our $VERSION = '';
+our $VERSION = '0.01';
 
 use constant DEFAULTS =>
   {background => 'white', foreground => 'black', margin => 10,};
