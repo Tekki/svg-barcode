@@ -14,6 +14,7 @@ SVG::Barcode - Base class for SVG 1D and 2D codes
 
 You will not use it directly, it will be loaded by its subclasses:
 
+- [SVG::Barcode::Code128](https://metacpan.org/pod/SVG::Barcode::Code128)
 - [SVG::Barcode::QRCode](https://metacpan.org/pod/SVG::Barcode::QRCode)
 
 # CONSTRUCTOR
