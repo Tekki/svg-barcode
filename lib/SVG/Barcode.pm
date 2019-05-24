@@ -9,7 +9,7 @@ no warnings 'experimental::signatures';
 use Carp 'croak';
 use POSIX 'fmax';
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use constant DEFAULTS =>
   {background => 'white', foreground => 'black', margin => 10,};
@@ -33,7 +33,7 @@ sub new ($class, $params = {}) {
 
 sub param ($self, $name, $newvalue = undef) {
   if (defined $newvalue) {
-    croak "Unknown parameter $name!" unless $self->DEFAULTS->{$name};
+    croak "Unknown parameter $name!" unless defined $self->DEFAULTS->{$name};
     $self->{$name} = $newvalue eq '' ? $self->DEFAULTS->{$name} : $newvalue;
     delete $self->{plotter};
     return $self;
@@ -216,7 +216,7 @@ Creates a QR Code.
 
 =head1 SEE ALSO
 
-L<SVG::Barcode::QRCode>.
+L<SVG::Barcode::Code128>, L<SVG::Barcode::QRCode>.
 
 =head1 AUTHOR & COPYRIGHT
 

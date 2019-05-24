@@ -1,5 +1,8 @@
 Revision history for perl distribution SVG-Barcode
 
+0.03 Not Released
+ - Handle zero defaults correctly
+
 0.02 2019-05-23T08:26:38+0200
  - Add text element
  - Add utilities for subclasses
