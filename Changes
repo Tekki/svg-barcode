@@ -1,6 +1,6 @@
 Revision history for perl distribution SVG-Barcode
 
-0.03 Not Released
+0.03 2019-05-24T21:36:27+0200
  - Handle zero defaults correctly
 
 0.02 2019-05-23T08:26:38+0200

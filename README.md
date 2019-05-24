@@ -42,7 +42,7 @@ Creates a QR Code.
 
 # SEE ALSO
 
-[SVG::Barcode::QRCode](https://metacpan.org/pod/SVG::Barcode::QRCode).
+[SVG::Barcode::Code128](https://metacpan.org/pod/SVG::Barcode::Code128), [SVG::Barcode::QRCode](https://metacpan.org/pod/SVG::Barcode::QRCode).
 
 # AUTHOR & COPYRIGHT
 
