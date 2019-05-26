@@ -4,8 +4,24 @@ SVG::Barcode - Base class for SVG 1D and 2D codes
 
 # SYNOPSIS
 
-    my $plotter = SVG::Barcode::Subclass->new(\%params)
-    $plotter->param(param_name => 'newvalue');
+    use SVG::Barcode::Subclass;
+
+    my $plotter = SVG::Barcode::Subclass->new;
+
+    $plotter->foreground;    # black
+    $plotter->background;    # white
+    $plotter->margin;        # 2
+    $plotter->id;
+    $plotter->class;
+    $plotter->width;
+    $plotter->height;
+
+    %params = (
+      foreground => 'red',
+      id         => 'barcode',
+    );
+    $plotter = SVG::Barcode::Subclass->new(%params);
+
     my $svg = $plotter->plot($text);
 
 # DESCRIPTION
@@ -15,34 +31,85 @@ SVG::Barcode - Base class for SVG 1D and 2D codes
 You will not use it directly, it will be loaded by its subclasses:
 
 - [SVG::Barcode::Code128](https://metacpan.org/pod/SVG::Barcode::Code128)
+- [SVG::Barcode::DataMatrix](https://metacpan.org/pod/SVG::Barcode::DataMatrix)
 - [SVG::Barcode::QRCode](https://metacpan.org/pod/SVG::Barcode::QRCode)
 
 # CONSTRUCTOR
 
 ## new
 
-    $plotter = SVG::Barcode::Subclass->new(\%params);
     $plotter = SVG::Barcode::Subclass->new;             # create with defaults
+    $plotter = SVG::Barcode::Subclass->new(%params);
 
 # METHODS
-
-## param
-
-    $value = $plotter->param($name);
-    $svg   = $plotter->param($name, $newvalue);
-    $svg   = $plotter->param($name, '');          # set to default
-
-Getter and setter for the parameters.
 
 ## plot
 
     $svg = $plotter->plot($text);
 
-Creates a QR Code.
+Creates a barcode.
+
+# PARAMETERS
+
+## background
+
+    $value   = $plotter->background;
+    $plotter = $plotter->background($newvalue);
+    $plotter = $plotter->background('');          # white
+
+Getter and setter for the background color. Default `white`.
+
+## class
+
+    $value   = $plotter->class;
+    $plotter = $plotter->class($newvalue);
+    $plotter = $plotter->class('');          # ''
+
+Getter and setter for the class of the svg element. Default `''`.
+
+## foreground
+
+    $value   = $plotter->foreground;
+    $plotter = $plotter->foreground($newvalue);
+    $plotter = $plotter->foreground('');          # black
+
+Getter and setter for the foreground color. Default `black`.
+
+## height
+
+    $value   = $plotter->height;
+    $plotter = $plotter->height($newvalue);
+    $plotter = $plotter->height('');          # ''
+
+Getter and setter for the height of the svg element. Default `''`.
+
+## id
+
+    $value   = $plotter->id;
+    $plotter = $plotter->id($newvalue);
+    $plotter = $plotter->id('');          # ''
+
+Getter and setter for the id of the svg element. Default `''`.
+
+## margin
+
+    $value   = $plotter->margin;
+    $plotter = $plotter->margin($newvalue);
+    $plotter = $plotter->margin('');          # 2
+
+Getter and setter for the margin around the barcode. Default `2`.
+
+## width
+
+    $value   = $plotter->width;
+    $plotter = $plotter->width($newvalue);
+    $plotter = $plotter->width('');          # ''
+
+Getter and setter for the width of the svg element. Default `''`.
 
 # SEE ALSO
 
-[SVG::Barcode::Code128](https://metacpan.org/pod/SVG::Barcode::Code128), [SVG::Barcode::QRCode](https://metacpan.org/pod/SVG::Barcode::QRCode).
+[SVG::Barcode::Code128](https://metacpan.org/pod/SVG::Barcode::Code128), [SVG::Barcode::DataMatrix](https://metacpan.org/pod/SVG::Barcode::DataMatrix), [SVG::Barcode::QRCode](https://metacpan.org/pod/SVG::Barcode::QRCode).
 
 # AUTHOR & COPYRIGHT
 
