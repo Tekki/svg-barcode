@@ -191,6 +191,7 @@ SVG::Barcode - Base class for SVG 1D and 2D codes
     use SVG::Barcode::Subclass;
 
     my $plotter = SVG::Barcode::Subclass->new;
+    my $svg     = $plotter->plot($text);
 
     $plotter->foreground;    # black
     $plotter->background;    # white
@@ -205,8 +206,6 @@ SVG::Barcode - Base class for SVG 1D and 2D codes
       id         => 'barcode',
     );
     $plotter = SVG::Barcode::Subclass->new(%params);
-
-    my $svg = $plotter->plot($text);
 
 =head1 DESCRIPTION
 
