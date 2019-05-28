@@ -1,6 +1,6 @@
 Revision history for perl distribution SVG-Barcode
 
-0.11 Not Released
+0.11 2019-05-28T17:44:36+0200
  - Add scale parameter
  - Improve docs
 

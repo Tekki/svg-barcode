@@ -10,7 +10,7 @@ use Carp 'croak';
 use POSIX 'fmax';
 use Sub::Util 'set_subname';
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 use constant DEFAULTS => {
   background => 'white',

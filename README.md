@@ -7,6 +7,7 @@ SVG::Barcode - Base class for SVG 1D and 2D codes
     use SVG::Barcode::Subclass;
 
     my $plotter = SVG::Barcode::Subclass->new;
+    my $svg     = $plotter->plot($text);
 
     $plotter->foreground;    # black
     $plotter->background;    # white
@@ -15,14 +16,13 @@ SVG::Barcode - Base class for SVG 1D and 2D codes
     $plotter->class;
     $plotter->width;
     $plotter->height;
+    $plotter->scale;
 
     %params = (
       foreground => 'red',
       id         => 'barcode',
     );
     $plotter = SVG::Barcode::Subclass->new(%params);
-
-    my $svg = $plotter->plot($text);
 
 # DESCRIPTION
 
@@ -98,6 +98,17 @@ Getter and setter for the id of the svg element. Default `''`.
     $plotter = $plotter->margin('');          # 2
 
 Getter and setter for the margin around the barcode. Default `2`.
+
+## scale
+
+    $value   = $plotter->scale;
+    $plotter = $plotter->scale($newvalue);
+    $plotter = $plotter->scale('');          # ''
+
+Getter and setter for the scale of the svg element.
+Sets ["width"](#width) and ["height"](#height) to products of the width and height of the graphics.
+Used to display small barcodes without blur.
+Default `''`.
 
 ## width
 
