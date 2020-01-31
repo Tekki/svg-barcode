@@ -26,13 +26,13 @@ SVG::Barcode - Base class for SVG 1D and 2D codes
 
 # DESCRIPTION
 
-[SVG::Barcode](https://metacpan.org/pod/SVG::Barcode) is a base class for SVG 1D and 2D codes.
+[SVG::Barcode](https://metacpan.org/pod/SVG%3A%3ABarcode) is a base class for SVG 1D and 2D codes.
 
 You will not use it directly, it will be loaded by its subclasses:
 
-- [SVG::Barcode::Code128](https://metacpan.org/pod/SVG::Barcode::Code128)
-- [SVG::Barcode::DataMatrix](https://metacpan.org/pod/SVG::Barcode::DataMatrix)
-- [SVG::Barcode::QRCode](https://metacpan.org/pod/SVG::Barcode::QRCode)
+- [SVG::Barcode::Code128](https://metacpan.org/pod/SVG%3A%3ABarcode%3A%3ACode128)
+- [SVG::Barcode::DataMatrix](https://metacpan.org/pod/SVG%3A%3ABarcode%3A%3ADataMatrix)
+- [SVG::Barcode::QRCode](https://metacpan.org/pod/SVG%3A%3ABarcode%3A%3AQRCode)
 
 # CONSTRUCTOR
 
@@ -105,10 +105,8 @@ Getter and setter for the margin around the barcode. Default `2`.
     $plotter = $plotter->scale($newvalue);
     $plotter = $plotter->scale('');          # ''
 
-Getter and setter for the scale of the svg element.
-Sets ["width"](#width) and ["height"](#height) to products of the width and height of the graphics.
-Used to display small barcodes without blur.
-Default `''`.
+Getter and setter for the scale of the svg element.  Sets ["width"](#width) and ["height"](#height) to products of
+the width and height of the graphics.  Used to display small barcodes without blur.  Default `''`.
 
 ## width
 
@@ -118,12 +116,13 @@ Default `''`.
 
 Getter and setter for the width of the svg element. Default `''`.
 
-# SEE ALSO
-
-[SVG::Barcode::Code128](https://metacpan.org/pod/SVG::Barcode::Code128), [SVG::Barcode::DataMatrix](https://metacpan.org/pod/SVG::Barcode::DataMatrix), [SVG::Barcode::QRCode](https://metacpan.org/pod/SVG::Barcode::QRCode).
-
 # AUTHOR & COPYRIGHT
 
-© 2019 by Tekki (Rolf Stöckli).
+© 2019–2020 by Tekki (Rolf Stöckli).
 
-This program is free software, you can redistribute it and/or modify it under the terms of the Artistic License version 2.0.
+This program is free software, you can redistribute it and/or modify it under the terms of the
+Artistic License version 2.0.
+
+# SEE ALSO
+
+[SVG::Barcode::Code128](https://metacpan.org/pod/SVG%3A%3ABarcode%3A%3ACode128), [SVG::Barcode::DataMatrix](https://metacpan.org/pod/SVG%3A%3ABarcode%3A%3ADataMatrix), [SVG::Barcode::QRCode](https://metacpan.org/pod/SVG%3A%3ABarcode%3A%3AQRCode).
